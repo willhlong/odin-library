@@ -1,3 +1,8 @@
+:root {
+  --header-footer-light-color: #AFDCEB;
+  --body-light-color: #F0F8FF;
+}
+
 html,
 body {
   padding: 0px;
@@ -16,16 +21,66 @@ body {
   "footer";
 }
 
-header { 
+.header { 
   grid-area: header;
-  background-color: aqua;
+  margin: 0px;
+  padding: 25px;
+  background-color: var(--header-footer-light-color);
   text-align: center;
 }
 
-.book-container { grid-area: content; }
+.main-content { 
+  grid-area: content; 
+  padding: 50px 200px;
+  background-color: var(--body-light-color);
+}
 
+.main-content h2,
+.input-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 15rem));
+  padding: 50px 0px;
+  justify-items: center;
+  justify-content: center;
+  gap: 25px;
+}
+
+.book {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: white;
+  width: 12rem;
+  padding: 10px;
+  border-radius: 15px;
+  box-shadow: 0px 5px 5px lightgray;
+  align-content: center;
+  position: relative;
+}
+
+svg {
+  width: 2rem;
+  align-self: flex-end;
+}
+
+h2.title {
+  padding: 10px;
+  text-align: center;
+}
+
+h3.author {
+  text-align: center;
+}
 footer { 
   grid-area: footer;
-  background-color: aqua;
+  background-color: var(--header-footer-light-color);
   text-align: center;
 }
+
+/*** Utility Classes ***/
+/***********************/
