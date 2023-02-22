@@ -1,0 +1,31 @@
+html,
+body {
+  padding: 0px;
+  margin: 0px;
+  font-style: 'Montserrat', 'Roboto', sans-serif;
+}
+
+.page-container {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas: 
+  "header"
+  "content"
+  "footer";
+}
+
+header { 
+  grid-area: header;
+  background-color: aqua;
+  text-align: center;
+}
+
+.book-container { grid-area: content; }
+
+footer { 
+  grid-area: footer;
+  background-color: aqua;
+  text-align: center;
+}
