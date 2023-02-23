@@ -70,7 +70,11 @@ body {
   box-shadow: 10px 10px 5px rgb(4, 32, 6);
 }
 
-.book:hover .book-flip-inner {
+/* .book:hover .book-flip-inner {
+  transform: rotateY(180deg);
+} */
+
+.flip {
   transform: rotateY(180deg);
 }
 
@@ -102,7 +106,7 @@ body {
   transform: rotateY(180deg);
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr auto;
+  grid-template-rows: 1fr auto auto;
   font-size: 1.5rem;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
