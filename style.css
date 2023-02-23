@@ -51,24 +51,20 @@ body {
 }
 
 .book {
-  background-color: white;
   width: 12rem;
   height: 15rem;
-  padding: 10px;
   border-radius: 15px;
-  box-shadow: 0px 5px 5px lightgray;
   perspective: 1000px;
-  background-image: url(images/annie-spratt-h-LcVG8W1XY-unsplash.jpg);
-  background-size: cover;
-  color: #86C5D8;
 }
 
 .book-flip-inner {
   position: relative;
   width: 100%;
   height: 100%;
-  transform: 1s;
+  transition: transform 1s;
   transform-style: preserve-3d;
+  border-radius: 15px;
+  box-shadow: 10px 10px 5px rgb(77, 80, 78);
 }
 
 .book:hover .book-flip-inner {
@@ -81,15 +77,28 @@ body {
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
+  border-radius: 15px;
+
+  background-image: url(images/annie-spratt-h-LcVG8W1XY-unsplash.jpg);
+  background-size: cover;
+  color: #86C5D8;
 }
 
 .book-flip-back {
   transform: rotateY(180deg);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 3fr auto;
+  padding: 10px;
+}
+
+.book-flip-back h4 {
+  margin: 0;
 }
 
 svg {
   width: 2rem;
-  align-self: flex-end;
+  justify-self: flex-end;
   fill: white;
 }
 
