@@ -1,4 +1,5 @@
-// TODO: - Clear screen before re-displaying library or other solution
+// TODO: - Fix algorithm for removing books from library
+  
 const form = document.getElementById("myForm");
 const addBookButton = document.getElementById("add-book-button");
 const cancelEntryButton = document.getElementById("cancel-add-button");

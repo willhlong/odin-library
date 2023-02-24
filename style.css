@@ -164,8 +164,7 @@ form label {
 }
 
 form input,
-textarea,
-button#cancel-add-button {
+textarea {
   height: 2rem;
   outline: none;
   border: none;
@@ -230,13 +229,14 @@ button#cancel-add-button {
 }
 
 form input[type="submit"],
-button#cancel-add-button {
+#cancel-add-button {
   background-color: #d9b99b;
   border-radius: 8px;
   font-family: "Cormorant Garamond", serif;
   font-size: 1.5rem;
   font-weight: bold;
   outline: none;
+  border: none;
 }
 
 footer { 
