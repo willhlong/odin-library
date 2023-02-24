@@ -43,7 +43,7 @@ body {
   justify-content: center;
 }
 
-button {
+button#add-book-button {
   background-color: #d9b99b;
   outline: none;
   margin-left: auto;
@@ -56,11 +56,11 @@ button {
   gap: 10px;
   align-items: center;
   font-family: "Cormorant Garamond", serif;
+  transition: 300ms;
 }
 
-button:hover {
+button#add-book-button:hover {
   transform: scale(1.2);
-  transform: transition(1s);
 }
 button svg {
  width: 35px;
@@ -164,7 +164,8 @@ form label {
 }
 
 form input,
-form textarea {
+textarea,
+button#cancel-add-button {
   height: 2rem;
   outline: none;
   border: none;
@@ -183,7 +184,7 @@ form.open {
     "pages ."
     "read read"
     "description description"
-    "submit submit";
+    "submit cancel";
 }
 
 form.close {
@@ -222,12 +223,22 @@ form#pages {
 
 form input[type="submit"] {
   grid-area: submit;
+}
+
+button#cancel-add-button {
+  grid-area: cancel;
+}
+
+form input[type="submit"],
+button#cancel-add-button {
   background-color: #d9b99b;
   border-radius: 8px;
   font-family: "Cormorant Garamond", serif;
   font-size: 1.5rem;
   font-weight: bold;
+  outline: none;
 }
+
 footer { 
   grid-area: footer;
   background-color: var(--header-footer-light-color);

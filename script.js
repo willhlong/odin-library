@@ -1,7 +1,10 @@
 // TODO: - Clear screen before re-displaying library or other solution
 const form = document.getElementById("myForm");
+const addBookButton = document.getElementById("add-book-button");
+const cancelEntryButton = document.getElementById("cancel-add-button");
 form.addEventListener("submit", addBookToLibrary);
-
+addBookButton.addEventListener("click", toggleOpenClose);
+cancelEntryButton.addEventListener("click", toggleOpenClose);
 
 let myLibrary = [];
 
@@ -53,6 +56,17 @@ function addBookToLibrary(event) {
     myLibrary.push(book);
   }
   displayLibrary();
+}
+
+function toggleOpenClose() {
+  if (form.classList.contains("close")) {
+    form.classList.remove("close");
+    form.classList.add("open");
+  }
+  else {
+    form.classList.remove("open");
+    form.classList.add("close");
+  }
 }
 
 function displayLibrary() {
