@@ -1,5 +1,5 @@
 :root {
-  --header-footer-light-color: #AFDCEB;
+  --header-footer-light-color: #d5e6cb;
   --body-light-color: #F0F8FF;
 }
 
@@ -43,6 +43,28 @@ body {
   justify-content: center;
 }
 
+button {
+  background-color: #d9b99b;
+  outline: none;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 5px 5px 5px black;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-family: "Cormorant Garamond", serif;
+}
+
+button:hover {
+  transform: scale(1.2);
+  transform: transition(1s);
+}
+button svg {
+ width: 35px;
+}
 .book-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(18rem, 20rem));
@@ -69,10 +91,6 @@ body {
   border-radius: 15px;
   box-shadow: 10px 10px 5px rgb(4, 32, 6);
 }
-
-/* .book:hover .book-flip-inner {
-  transform: rotateY(180deg);
-} */
 
 .flip {
   transform: rotateY(180deg);
@@ -120,13 +138,96 @@ body {
   padding: 40px
 }
 
-svg {
+.book-flip-back svg {
   width: 3rem;
   justify-self: flex-end;
   fill: #d5e6cb;
   padding: 40px;
 }
 
+form {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--body-light-color);
+  padding: 50px;
+  border-radius: 15px;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: bold;
+  font-size: 1.5rem;
+  background-color: #d5e6cb;;
+}
+
+form label {
+  display: block;
+}
+
+form input,
+form textarea {
+  height: 2rem;
+  outline: none;
+  border: none;
+}
+
+form input:focus {
+  border: 1px solid black;
+}
+
+form.open {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 
+    "title author"
+    "pages ."
+    "read read"
+    "description description"
+    "submit submit";
+}
+
+form.close {
+  display: none;
+}
+
+form#title {
+  grid-area: title;
+}
+
+form#author {
+  grid-area: author;
+}
+
+form#pages {
+  grid-area: pages;
+}
+
+.radio-wrapper {
+  grid-area: read;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "label label"
+    "yes no";
+  place-items: center;
+}
+
+.radio-wrapper p {
+  grid-area: label;
+}
+
+.description {
+  grid-area: description;
+}
+
+form input[type="submit"] {
+  grid-area: submit;
+  background-color: #d9b99b;
+  border-radius: 8px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
 footer { 
   grid-area: footer;
   background-color: var(--header-footer-light-color);
@@ -135,3 +236,6 @@ footer {
 
 /*** Utility Classes ***/
 /***********************/
+.span-2 {
+  display: flex;
+}

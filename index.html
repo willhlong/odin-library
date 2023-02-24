@@ -13,29 +13,49 @@
   <div class="page-container">
     <h1 class="header">Welcome to Trog Library!</h1>
     <div class="main-content">
+      <div class="add-book-button">
+        <button>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <title>book-plus-outline</title>
+            <path d="M13.09 20C13.21 20.72 13.46 21.39 13.81 22H6C4.89 22 4 21.11 4 20V4C4 2.9 4.89 2 6 2H18C19.11 2 20 2.9 20 4V13.09C19.67 13.04 19.34 13 19 13C18.66 13 18.33 13.04 18 13.09V4H13V12L10.5 9.75L8 12V4H6V20H13.09M20 18V15H18V18H15V20H18V23H20V20H23V18H20Z" />
+          </svg>
+          Add a new book
+        </button>
+      </div>
       <div class="book-grid">
         
                     
         
       </div>
-      <form id="myForm" action="">
-        <label for="title">Title:</label>
-        <input type="text" id="title" placeholder="Enter title..." name="title" required>
-
-        <label for="author">Author:</label>
-        <input type="text" id="author" placeholder="Enter author name..." name="author" required>
-
-        <label for="num-pages">Number of pages:</label>
-        <input type="text" id="pages" placeholder="# of pages..." name="pages" required>
-
-        Have you already read this book?
-        <input type="radio" id="yes" name="read" value="yes">
-        <label for="yes">Yes</label>                                                     
-        <input type="radio" id="no" name="read" value="no">
-        <label for="no">No</label>
-        <label for="description">Book description (optional):</label>
-        <textarea name="description" id="description" cols="15" rows="5"></textarea>
-        <input type="submit" value="Add new book">
+      <form id="myForm" class="close" action="">
+        <div id="title">
+          <label for="title">Title:</label>
+          <input type="text" placeholder="Enter title..." name="title" required>
+        </div>
+        <div id="author-wrapper">
+          <label for="author">Author:</label>
+          <input type="text" id="author" placeholder="Enter author name..." name="author" required>
+        </div>
+        <div class="pages-wrapper">
+          <label for="num-pages">Number of pages:</label>
+          <input type="text" id="pages" placeholder="# of pages..." name="pages" required>
+        </div>
+        <div class="radio-wrapper">
+          <p>Have you already read this book?</p>
+          <div class="span-2">
+            <label for="yes">Yes</label>   
+            <input type="radio" id="yes" name="read" value="yes">
+          </div>
+          <div class="span-2">
+            <label for="no">No</label>                                            
+            <input type="radio" id="no" name="read" value="no">
+          </div>
+        </div>
+        <div class="description">
+          <label for="description">Book description:</label>
+          <textarea name="description" id="description" cols="50" rows="5"></textarea>
+        </div>
+        <input type="submit" class="submit" value="Confirm Entry">
       </form>
     </div>
     <footer>
