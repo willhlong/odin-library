@@ -1,5 +1,4 @@
 // TODO: - Clear screen before re-displaying library or other solution
-//       - Fix number of pages undefined
 const form = document.getElementById("myForm");
 form.addEventListener("submit", addBookToLibrary);
 
@@ -43,12 +42,12 @@ function addBookToLibrary(event) {
   const formData = new FormData(event.target);
   const bookData = Object.fromEntries(formData);
   if (bookData.description != '') {
-    const book = new Book(bookData.title, bookData.author, bookData.numPages, bookData.read, bookData.description);
+    const book = new Book(bookData.title, bookData.author, bookData.pages, bookData.read, bookData.description);
     book.bookNumber = myLibrary.length;
     myLibrary.push(book);
   }
   else {
-    const book = new Book(bookData.title, bookData.author, bookData.numPages, bookData.read);
+    const book = new Book(bookData.title, bookData.author, bookData.pages, bookData.read);
     book.bookNumber = myLibrary.length;
     myLibrary.push(book);
   }
