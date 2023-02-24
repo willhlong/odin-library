@@ -55,6 +55,7 @@ function addBookToLibrary(event) {
     book.bookNumber = myLibrary.length;
     myLibrary.push(book);
   }
+  form.reset();
   toggleOpenClose();
   displayLibrary();
 }
